@@ -26,6 +26,7 @@ class BaseManager {
      * @readonly
      */
     Object.defineProperty(this, 'holds', { value: Structures.get(holds.name) || holds });
+    console.log(typeof cacheOptions)
     cacheOptions["holds"] = holds;
 
     /**
