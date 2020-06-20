@@ -5,6 +5,10 @@ const Util = require('./Util');
 
 class Collection extends BaseCollection {
   
+  constructor (entries) {
+    super(entries);
+  }
+  
   toJSON() {
     return this.map(e => (typeof e.toJSON === 'function' ? e.toJSON() : Util.flatten(e)));
   }
