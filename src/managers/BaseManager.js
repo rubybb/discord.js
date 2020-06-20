@@ -11,11 +11,8 @@ class BaseManager {
   constructor(client, iterable, holds, cacheType = Collection, ...cacheOptions) {
     if (!Structures) Structures = require('../util/Structures');
     
-    if (client.options.cacheType) {
+    if (client.options.cacheType && cacheType === Collection) {
       cacheType = client.options.cacheType; 
-      if (typeof cacheType === "string") {
-        cacheType = require(cacheType);
-      }
     }
     
     /**
