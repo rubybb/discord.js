@@ -45,7 +45,7 @@ class BaseManager {
      * Holds the cache for the data model
      * @type {Collection}
      */
-    this.cache = new cacheType({holds}, ...cacheOptions);
+    this.cache = new cacheType({holds, cacheOptions});
     console.log(this.cache, cacheOptions)
     if (iterable) for (const i of iterable) this.add(i);
   }

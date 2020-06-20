@@ -5,8 +5,8 @@ const Util = require('./Util');
 
 class Collection extends BaseCollection {
   
-  constructor (options, entries) {
-    super(entries);
+  constructor (options) {
+    super(options.cacheOptions);
   }
   
   toJSON() {
