@@ -40,6 +40,8 @@ class BaseManager {
      * @type {Collection}
      */
     this.cacheType = cacheType;
+    
+    console.log(...cacheOptions)
 
     /**
      * Holds the cache for the data model
