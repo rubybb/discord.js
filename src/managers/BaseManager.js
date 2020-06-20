@@ -47,6 +47,7 @@ class BaseManager {
      * @type {Collection}
      */
     this.cache = new cacheType(...cacheOptions);
+    console.log(this.cache, cacheOptions)
     if (iterable) for (const i of iterable) this.add(i);
   }
 
