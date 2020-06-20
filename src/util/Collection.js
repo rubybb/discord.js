@@ -6,6 +6,8 @@ const Util = require('./Util');
 class Collection extends BaseCollection {
   
   constructor (options = {}) {
+    Object.assign({cacheOptions: []}, options)
+    
     super(options.cacheOptions);
   }
   
