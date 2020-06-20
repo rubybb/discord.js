@@ -10,6 +10,9 @@ let Structures;
 class BaseManager {
   constructor(client, iterable, holds, cacheType = Collection, ...cacheOptions) {
     if (!Structures) Structures = require('../util/Structures');
+    
+    if (client.options.cacheType) cacheType = require(client.options.cacheType); 
+    
     /**
      * The data structure belonging to this manager
      * @name BaseManager#holds
@@ -18,6 +21,7 @@ class BaseManager {
      * @readonly
      */
     Object.defineProperty(this, 'holds', { value: Structures.get(holds.name) || holds });
+    cacheOptions["holds"] = holds;
 
     /**
      * The client that instantiated this Manager
