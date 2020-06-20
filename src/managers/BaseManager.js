@@ -26,7 +26,7 @@ class BaseManager {
      * @readonly
      */
     Object.defineProperty(this, 'holds', { value: Structures.get(holds.name) || holds });
-    //cacheOptions["holds"] = holds;
+    cacheOptions["holds"] = holds;
 
     /**
      * The client that instantiated this Manager
