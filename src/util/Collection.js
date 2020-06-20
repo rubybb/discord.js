@@ -5,7 +5,7 @@ const Util = require('./Util');
 
 class Collection extends BaseCollection {
   
-  constructor (entries) {
+  constructor (options, entries) {
     super(entries);
   }
   
