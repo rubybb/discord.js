@@ -26,7 +26,6 @@ class BaseManager {
      * @readonly
      */
     Object.defineProperty(this, 'holds', { value: Structures.get(holds.name) || holds });
-    cacheOptions.push(holds);
 
     /**
      * The client that instantiated this Manager
@@ -46,7 +45,7 @@ class BaseManager {
      * Holds the cache for the data model
      * @type {Collection}
      */
-    this.cache = new cacheType(...cacheOptions);
+    this.cache = new cacheType(...cacheOptions, {holds});
     console.log(this.cache, cacheOptions)
     if (iterable) for (const i of iterable) this.add(i);
   }
